@@ -21,7 +21,7 @@ export const routes: Routes = [
             path:'events',
             data:{
               menuDisplay: true,
-              menuIcon: 'business',
+              menuIcon: 'show_chart',
               menuTitle: 'Events',
             },
             canActivate: [AuthGuard],
@@ -31,7 +31,7 @@ export const routes: Routes = [
             path:'clients',
             data:{
               menuDisplay: true,
-              menuIcon: 'business',
+              menuIcon: 'devices',
               menuTitle: 'Clients',
             },
             canActivate: [AuthGuard],

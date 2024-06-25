@@ -4,11 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve --port 4200 --ssl --ssl-cert .\cert\aspnetapp.crt --ssl-key .\cert\aspnetapp-decrypted.key ` for a dev server. Navigate to `https://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Cert install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install the `.\cert\aspnetapp.crt` to trust the server or you can use your certificate and specify in `ng serve` command above.
 
 ## Build
 

@@ -17,10 +17,10 @@ export const environment = {
         userImageUrl: "https://i.pravatar.cc/64"
     },
     events:{
-        apiEndpoint: 'https://localhost:44393'
+        apiEndpoint: 'https://localhost:12001'
     },
     webPush:{
-        apiEndpoint: 'https://localhost:44393',
+        apiEndpoint: 'https://localhost:12001',
         publicKey: "BA97uWDYHxs_wcgUwH6PFDiJzKvse6GZ4jlDdWgRjkWl7AOIBVkuKZ65wGQ0gK4tzoVxO0emc_tEFO7CZYCwqxI"
     }
 };
