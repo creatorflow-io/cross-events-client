@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@juice-js/auth';
 import { PageComponent } from '@juice-js/layout';
-import { EventsComponent } from './src/app/pages/events/events.component';
-import { ClientsComponent } from './src/app/pages/clients/clients.component';
+import { EventsComponent } from './pages/events/events.component';
+import { ClientsComponent } from './pages/clients/clients.component';
+import { UsersComponent } from './pages/users/users.component';
+import { RolesComponent } from './pages/roles/roles.component';
 
 export const routes: Routes = [
     {
@@ -57,6 +59,26 @@ export const routes: Routes = [
             loadChildren: () => import('@juice-js/auth').then(m =>{
               return m.AuthRoutingModule;
             })
+          },
+          {
+            path:'users',
+            data:{
+              menuDisplay: true,
+              menuIcon: 'supervisor_account',
+              menuTitle: 'Users',
+            },
+            canActivate: [AuthGuard],
+            component: UsersComponent
+          },
+          {
+            path:'roles',
+            data:{
+              menuDisplay: true,
+              menuIcon: 'verified_user',
+              menuTitle: 'Roles',
+            },
+            canActivate: [AuthGuard],
+            component: RolesComponent
           }
         ]
       }

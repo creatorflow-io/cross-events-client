@@ -1,8 +1,0 @@
-<h1 mat-dialog-title>{{ 'Setting your profile' | translate}}</h1>
-<div mat-dialog-content>
-    <mat-slide-toggle [(ngModel)]="isSubscribed" (change)="onSubscriptionsChange($event)">{{ 'Notifications' | translate }}</mat-slide-toggle>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>{{ 'Cancel' | translate }}</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>{{ 'Ok' | translate }}</button>
-</div>

@@ -1,0 +1,50 @@
+
+<h2 mat-dialog-title>{{ 'Update user' | translate }}</h2>
+
+<mat-dialog-content>
+    <h3>{{ model.UserName }}</h3>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>{{ 'Name' | translate }}</mat-label>
+        <input matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            {{ 'Please enter a name' | translate }}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>{{ 'Email' | translate }}</mat-label>
+        <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+            {{ 'Please enter an email' | translate }}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>{{ 'PhoneNumber' | translate }}</mat-label>
+        <input matInput [formControl]="phoneNumberFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
+            {{ 'Please enter a phone number' | translate }}
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field style="width: 100%;">
+        <mat-label>{{ 'First Name' | translate }}</mat-label>
+        <input matInput [formControl]="firstNameFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="firstNameFormControl.hasError('required')">
+            {{ 'Please enter a name' | translate }}
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+        <mat-label>{{ 'Last Name' | translate }}</mat-label>
+        <input matInput [formControl]="lastNameFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="lastNameFormControl.hasError('required')">
+            {{ 'Please enter a name' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="form.invalid"><mat-icon>save</mat-icon>{{ 'Submit' | translate }}</button>
+    <button mat-raised-button (click)="cancel()"><mat-icon>cancel</mat-icon>{{ 'Cancel' | translate }}</button>
+</mat-dialog-actions>

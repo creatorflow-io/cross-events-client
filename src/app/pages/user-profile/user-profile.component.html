@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{ 'Setting your profile' | translate}}</h1>
+<div mat-dialog-content>
+  <div *ngIf="loggedin">
+    <p *ngIf="name">{{'Welcome' | translate}} {{name}}</p>
+    <p *ngIf="email">{{ 'Email' | translate}}: {{email}}</p>
+    <mat-slide-toggle [(ngModel)]="isSubscribed" (change)="onSubscriptionsChange($event)">{{ 'Notifications' | translate }}</mat-slide-toggle>
+  </div>
+  <div *ngIf="!loggedin">
+    <p>{{ 'Please login to view your profile' | translate}}</p>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button *ngIf="loggedin" color="primary" (click)="logout()">{{ 'Logout' | translate}}</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>{{ 'Ok' | translate }}</button>
+</div>

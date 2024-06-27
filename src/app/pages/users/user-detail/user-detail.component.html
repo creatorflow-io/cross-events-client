@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>{{ 'User information' | translate }}</h2>
+
+<mat-dialog-content *ngIf="model">
+    <h3>{{ model.UserName }}</h3>
+
+    <mat-list>
+        <mat-list-item>
+            <span matListItemTitle>{{ 'Unique Id' | translate }}</span>
+            <span matListItemLine>{{ model.Id }} 
+                <button style="margin-left: 6px;" mat-icon-button [cdkCopyToClipboard]="model.Id" 
+                [attr.aria-label]="'Copy' | translate">
+                    <mat-icon>content_copy</mat-icon>
+                </button>
+            </span>
+        </mat-list-item>
+
+        <mat-list-item>
+            <span matListItemTitle>{{ 'UserName' | translate }}</span>
+            <span matListItemLine>{{ model.UserName }}</span>
+        </mat-list-item>
+        
+        <mat-list-item>
+            <span matListItemTitle>{{ 'Name' | translate }}</span>
+            <span matListItemLine>{{ model.Name }}</span>
+        </mat-list-item>
+
+        <mat-list-item>
+            <span matListItemTitle>{{ 'First Name' | translate }}</span>
+            <span matListItemLine>{{ model.FirstName }}</span>
+        </mat-list-item>
+
+        <mat-list-item>
+            <span matListItemTitle>{{ 'Last Name' | translate }}</span>
+            <span matListItemLine>{{ model.Surname }}</span>
+        </mat-list-item>
+
+        <mat-list-item>
+            <span matListItemTitle>{{ 'Email' | translate }}</span>
+            <span matListItemLine>{{ model.Email }}</span>
+        </mat-list-item>
+
+        <mat-list-item>
+            <span matListItemTitle>{{ 'Phone Number' | translate }}</span>
+            <span matListItemLine>{{ model.PhoneNumber }}</span>
+        </mat-list-item>
+
+        <mat-list-item>
+            <span matListItemTitle>{{ 'Roles' | translate }}</span>
+            <span matListItemLine>{{ model.Roles.join(', ') }}</span>
+        </mat-list-item>
+
+    </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>{{ 'Close' | translate }}</button>
+</mat-dialog-actions>

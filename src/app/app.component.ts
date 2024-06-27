@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 
 @Component({
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'tcpevents-client';
+  title = 'Events management';
+
+  constructor(private auth: OAuthService){
+
+  }
 }

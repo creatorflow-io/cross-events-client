@@ -11,14 +11,14 @@ import { MaterialModule } from './material.module';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { LayoutModule } from '@juice-js/layout';
 import { AuthModule } from '@juice-js/auth';
-import { EventsModule } from './src/app/pages/events/events.module';
-import { ConfirmDialogComponent } from './src/app/pages/confirm-dialog/confirm-dialog.component';
+import { EventsModule } from './pages/events.module';
+import { ConfirmDialogComponent } from './pages/confirm-dialog/confirm-dialog.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { WebPushModule } from './src/app/pages/shared/services/web-push.module';
-import { CustomUserProfileDialogModule } from './src/app/pages/user-profile/custom-user-profile-dialog.module';
-import { ClientsModule } from './src/app/pages/clients/clients.module';
+import { WebPushModule } from './pages/shared/services/web-push.module';
+import { CustomUserProfileDialogModule } from './pages/user-profile/custom-user-profile-dialog.module';
+import { IdentityModule } from './pages/identity.module';
 
-const {auth, production, layout, events} = environment;
+const {auth, production, layout, events, identity} = environment;
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ const {auth, production, layout, events} = environment;
     BrowserAnimationsModule,
     MaterialModule,
     EventsModule.forRoot(events),
-    ClientsModule.forRoot(events),
+    IdentityModule.forRoot(identity),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: true,
       // Register the ServiceWorker as soon as the application is stable
