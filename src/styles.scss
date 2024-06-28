@@ -44,11 +44,22 @@ $dark-theme: mat.define-dark-theme((
 @include mat.all-component-themes($light-theme);
 @include layout.layout-component-themes($light-theme);
 
+
+.mat-form-field-hide-placeholder .mat-mdc-select-placeholder{
+  color: rgb(37, 45, 51)!important;
+  -webkit-text-fill-color: rgb(37, 45, 51)!important;
+}
+
 .dark {
   // Define a dark theme
   @include mat.all-component-colors($dark-theme);
   @include layout.layout-component-colors($dark-theme);
   --mdc-filled-text-field-focus-label-text-color: #8c9eff !important;
+  
+  .mat-form-field-hide-placeholder .mat-mdc-select-placeholder{
+    color: aliceblue!important;
+    -webkit-text-fill-color: aliceblue!important;
+  }
 }
 
 .density-compact {
@@ -63,9 +74,4 @@ $color-success: mat.get-color-from-palette($green-palette, 400);
     &.mat-mdc-menu-item .mat-icon-no-color{
         color: $color-success !important;
     }
-}
-
-.mat-form-field-hide-placeholder .mat-mdc-select-placeholder{
-  color: aliceblue!important;
-  -webkit-text-fill-color: aliceblue!important;
 }
